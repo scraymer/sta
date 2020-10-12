@@ -1,0 +1,74 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup Cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Setup Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Test and Build
+        run: |
+          npm ci
+          npm run clean
+          npm run test
+          npm run build:prod -- --base-href /${{ secrets.BASE_HREF }}/
+
+      - name: Upload Build
+        uses: actions/upload-artifact@v1
+        if: success()
+        with:
+          name: build
+          path: dist/app
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup SSH Client
+        uses: webfactory/ssh-agent@v0.2.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Download Build
+        uses: actions/download-artifact@v1
+        with:
+          name: build
+          path: dist/app
+
+      - name: Deploy Build
+        uses: JamesIves/github-pages-deploy-action@3.4.6
+        with:
+          BRANCH: gh-pages
+          FOLDER: dist/app
+          CLEAN: true
+          SSH: true

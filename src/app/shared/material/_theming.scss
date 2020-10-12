@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+// import app theme styles
+@import 'shared/layout/body/body.theme';
+@import 'shared/layout/header/header.theme';
+@import 'shared/layout/nav/nav.theme';
+@import 'shared/layout/scrollbar/scrollbar.theme';
+@import 'shared/material/card/card.theme';
+@import 'shared/material/sidenav/sidenav.theme';
+
+// all components that require theming within the application
+// to be called from ./src/themes.scss only
+@mixin app-theme($theme) {
+
+    // include themes for angular material components
+    @include angular-material-theme($theme);
+
+    // include app themes
+    @include app-body-theme($theme);
+    @include app-header-theme($theme);
+    @include app-nav-theme($theme);
+    @include app-scrollbar-theme($theme);
+    @include app-card-theme($theme);
+    @include app-sidenav-theme($theme);
+}

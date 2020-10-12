@@ -1,0 +1,71 @@
+@import 'shared/variables';
+
+// default layout style
+.app-container {
+    height: auto;
+    min-height: 100%;
+    max-width: 100%;
+
+    .app-header {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        transition: transform $transition-duration $transition-function;
+    }
+
+    .app-sidenav {
+        min-width: 260px;
+    }
+
+    .app-nav {
+        display: block;
+        min-height: calc(100% - #{$footer-height});
+    }
+
+    .app-footer {
+        display: block;
+        height: $footer-height;
+    }
+
+    // layout style when app-header is hidden
+    &.app-header-hidden:not(.app-sidenav-over) .app-header {
+        transform: translateY(-100%);
+    }
+
+    // layout style when app-header is hidden
+    &.app-header-hidden:not(.app-sidenav-over) .app-sidenav {
+        margin-top: -$header-toolbar-sm-height;
+    }
+}
+
+// layout style for navigation on side
+@media screen and (min-width: $breakpoint-nav-side-min) {
+
+    .app-container {
+        
+        .app-sidenav {
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        // layout style when app-header is hidden
+        &.app-header-hidden:not(.app-sidenav-over) .app-sidenav {
+            margin-top: -$header-toolbar-lg-height;
+        }
+    }
+}
+
+// layout style when header is full
+@media screen and (min-width: $breakpoint-header-lg-min) {
+
+    .app-container {
+
+        .app-sidenav {
+            transition: margin-top $transition-duration $transition-function;
+        }
+    }
+}
