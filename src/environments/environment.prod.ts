@@ -7,13 +7,13 @@ export const environment = {
         version: `v${version}`,
     },
     analytics: {
-        enabled: true,
+        enabled: false,
         mixpanel: {
             token: 'REPLACE_ME'
         }
     },
     monitoring: {
-        enabled: true,
+        enabled: false,
         sentry: {
             dns: 'REPLACE_ME',
             tracingOrigins: ['localhost'],

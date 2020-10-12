@@ -45,7 +45,7 @@ export const environment = {
             /**
              * Mixpanel project token to push events to.
              */
-            token: '435b94a4d4bc80932b0d64612b78438b'
+            token: 'REPLACE_ME'
         }
     },
 
@@ -68,7 +68,7 @@ export const environment = {
             /**
              * Sentry project dns (Data Source Name) to push events to.
              */
-            dns: 'https://44c78ddfbccb4698b2ba8df5396d0c15@o440991.ingest.sentry.io/5410733',
+            dns: 'REPLACE_ME',
 
             /**
              * Define which outgoing requests the `sentry-trace` header will be attached to.
