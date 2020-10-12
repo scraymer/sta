@@ -1,4 +1,4 @@
-![Build and Deploy](https://github.com/scraymer/sla/workflows/Build%20and%20Deploy/badge.svg)
+![Build and Deploy](https://github.com/scraymer/sta/workflows/Build%20and%20Deploy/badge.svg)
 
 # Simple Template App (STA)
 
