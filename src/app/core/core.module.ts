@@ -10,25 +10,25 @@ import { AnalyticsModule } from './analytics/analytics.module';
 import { MonitoringModule } from './monitoring/monitoring.module';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    AnalyticsModule,
-    CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MonitoringModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    StorageServiceModule
-  ],
-  exports: [
-    AnalyticsModule,
-    CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MonitoringModule,
-    ServiceWorkerModule,
-    StorageServiceModule
-  ]
+    declarations: [],
+    imports: [
+        AnalyticsModule,
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MonitoringModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        StorageServiceModule
+    ],
+    exports: [
+        AnalyticsModule,
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MonitoringModule,
+        ServiceWorkerModule,
+        StorageServiceModule
+    ]
 })
 export class CoreModule { }
