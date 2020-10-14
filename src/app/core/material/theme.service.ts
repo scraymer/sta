@@ -28,8 +28,7 @@ export class ThemeService {
      * @param storage storage to persiste theme properties
      */
     constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) {
-        const isDark: boolean = this.storage.get(ThemeConstant.IS_DARK_THEME_KEY);
-        if (isDark === true || this.isPreferDark(isDark)) { this.setDark(true); }
+        if (this.isPreferDark()) { this.setDark(true); }
     }
 
     /**
@@ -43,12 +42,12 @@ export class ThemeService {
     }
 
     /**
-     * Return true if the isDark setting is undefined and the user's media query prefers dark mode.
-     *
-     * @param isDarkSetting isDark storage setting
+     * Return true if the isDark storage setting is true OR isDark storage setting is undefined and
+     * the media query prefers dark mode.
      */
-    private isPreferDark(isDark: boolean): boolean {
-        return isDark === undefined && window.matchMedia
-            && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    private isPreferDark(): boolean {
+        const isDark: boolean = this.storage.get(ThemeConstant.IS_DARK_THEME_KEY);
+        return isDark === true || (isDark === undefined && window.matchMedia
+            && window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
 }
