@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1602643259387,
+  "timestamp": 1602643975793,
   "index": "/sta/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/sta/favicon.ico",
         "/sta/index.html",
-        "/sta/main-es2015.81439c3afc205e5018a1.js",
-        "/sta/main-es5.81439c3afc205e5018a1.js",
+        "/sta/main-es2015.cd383c5f4934d4fcac59.js",
+        "/sta/main-es5.cd383c5f4934d4fcac59.js",
         "/sta/manifest.webmanifest",
         "/sta/polyfills-es2015.642f04a99578c9b184a0.js",
         "/sta/polyfills-es5.ecdecd6e86851c107edc.js",
@@ -61,7 +61,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/sta/assets/icons/bookmark-base.svg": "614221e1a4dce2e1e014f2d341a879cd8992cb7f",
+    "/sta/assets/icons/bookmark-base.svg": "acf32fdbd3f30565163de816841d4b6ad4d5b082",
     "/sta/assets/icons/icon-120x120.png": "633eca157a69e913598f29145a8d8f60db240357",
     "/sta/assets/icons/icon-128x128.png": "ba3e438abffdc0ffe6a8bb27dc86eca091cd73fd",
     "/sta/assets/icons/icon-144x144.png": "901a1bb8cda41df86ae06297538844b3d54c9c12",
@@ -91,9 +91,9 @@
     "/sta/assets/under-construction-dark.jpg": "9898aed9e4445d15dfba0cb92be7f94112f367d7",
     "/sta/assets/under-construction-light.jpg": "9deee647f9ee31009f8dd2ac42f1216fb3f7123b",
     "/sta/favicon.ico": "5c2161f26c752a4ebc2e19039b456d8512494c81",
-    "/sta/index.html": "d97652ad144d3171f0e855434c26fc15f750ef03",
-    "/sta/main-es2015.81439c3afc205e5018a1.js": "aeda20afe0a63a0beab287ba666348b22bba35db",
-    "/sta/main-es5.81439c3afc205e5018a1.js": "216f2ccc8a9a885e3edbeb4451837a298a04770d",
+    "/sta/index.html": "26743b3c0ea1097b0b75a27c9f1892b68bebcea9",
+    "/sta/main-es2015.cd383c5f4934d4fcac59.js": "db7e4bb2d4dc94caba8488cd6d47919457a7a34f",
+    "/sta/main-es5.cd383c5f4934d4fcac59.js": "70cf12a27e553e4b182b03a5514c17c01b27eca5",
     "/sta/manifest.webmanifest": "3add2c7973e60220915e5be65b6c300e4c2eaa5c",
     "/sta/polyfills-es2015.642f04a99578c9b184a0.js": "d0fee4aed1e5841843f11dd1898fa893c72043f4",
     "/sta/polyfills-es5.ecdecd6e86851c107edc.js": "f985554ec1e80e9265eb75bf640db6a39a0de826",
