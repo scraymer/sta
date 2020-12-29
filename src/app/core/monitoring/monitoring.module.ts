@@ -13,6 +13,7 @@ import { createErrorHandler, TraceService } from '@sentry/angular';
         {
             provide: TraceService,
             deps: [Router],
+            useValue: undefined
         },
         {
             provide: APP_INITIALIZER,
