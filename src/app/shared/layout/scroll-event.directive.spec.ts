@@ -1,5 +1,5 @@
 import { ElementRef, Renderer2 } from '@angular/core';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { ScrollEventDirective } from './scroll-event.directive';
 
 describe('ScrollEventDirective', () => {
@@ -8,7 +8,7 @@ describe('ScrollEventDirective', () => {
     let renderer: Renderer2;
     let document: Document;
 
-    beforeEach(async( () => {
+    beforeEach(waitForAsync( () => {
             TestBed.configureTestingModule({
                     providers: [MockElementRef, Renderer2, Document]
             }).compileComponents();
